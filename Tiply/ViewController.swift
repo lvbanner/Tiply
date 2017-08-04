@@ -63,6 +63,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(billField.text, forKey: "Stored Bill Amount")
+        defaults.set(NSDate.init(), forKey: "Stored Bill Time")
+        defaults.synchronize()
     }
     
     @IBAction func increasePercentage(_ sender: Any) {
