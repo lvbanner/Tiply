@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/L4WFM9D.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -37,11 +37,11 @@ As part of your pre-work submission, please reflect on the app and answer the fo
 
 **Question 1**: "What are your reactions to the iOS app development platform so far? How would you describe outlets and actions to another developer? Bonus: any idea how they are being implemented under the hood? (It might give you some ideas if you right-click on the Storyboard and click Open As->Source Code")
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:** I really enjoy working within the iOS app development platform. I have already been coding in Swift for about a year now, but I lack in true textbook knowledge of the language and the nuances within iOS development. I would describe outlets as code references to sepcific elements being used within the storyboard. Actions are functions attached to event listeners on the specific objects on the storyboard. Under the hood, I would assume that each object behaves as an instance of a class. The actions function as an instance method attached to an instance of a class.
 
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:** You get a strong reference cycle when you capture self within a closure. This happens when you have a property for a class that has a closure and you reference that instance using self within the body of the closure. This results is a strong memory reference pointing in both directions which means ARC can not get rid of the memory allocated because the reference count cannot hit zero.To avoid creating this cycle, you should use the keyword weak or unowned, these keywords will not make a strong reference to self when you call it within a closure.
 
 
 ## License
