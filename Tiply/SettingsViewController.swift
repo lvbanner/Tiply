@@ -10,10 +10,40 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var tipPercentageLabel: UILabel!
+    var tipPercentage:Double = 0.2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let defaults = UserDefaults.standard
+        tipPercentage = (defaults.object(forKey: "Default Tip") as! Double?) ?? 0.18
+        
+        let tipString = String(format: "%g", tipPercentage*100)
+        tipPercentageLabel.text = tipString + "%"
+        
         // Do any additional setup after loading the view.
+    }
+    @IBAction func increasePercentage(_ sender: Any) {
+        if tipPercentage < 1{
+            tipPercentage+=0.01
+            let tipString = String(format: "%g", tipPercentage*100)
+            tipPercentageLabel.text = tipString + "%"
+            changeDefaultTip(sender)
+        }
+    }
+    @IBAction func decreasePercentage(_ sender: Any) {
+        if tipPercentage > 0.15{
+            tipPercentage-=0.01
+            let tipString = String(format: "%g", tipPercentage*100)
+            tipPercentageLabel.text = tipString + "%"
+            changeDefaultTip(sender)
+        }
+    }
+    func changeDefaultTip(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(tipPercentage, forKey: "Default Tip")
+        defaults.synchronize()
     }
 
     override func didReceiveMemoryWarning() {

@@ -25,11 +25,28 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let tipString = String(format: "%g", tipPercentage*100)
-        tipPercentageLabel.text = tipString + "%"
+
         billField.delegate = self
         billField.becomeFirstResponder()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        tipPercentage = (defaults.object(forKey: "Default Tip") as! Double?) ?? 0.18
+        if (defaults.object(forKey: "Stored Bill Amount") != nil) {
+            let lastTime = defaults.object(forKey: "Stored Bill Time") as! NSDate
+            if NSDate().timeIntervalSince(lastTime as Date) < 600 {
+                billField.text = defaults.object(forKey: "Stored Bill Amount") as! String?
+                calculateTip(billField)
+            }
+            else {
+                defaults.removeObject(forKey: "Stored Bill Amount")
+                defaults.removeObject(forKey: "Stored Bill Time")
+            }
+        }
+        let tipString = String(format: "%g", tipPercentage*100)
+        tipPercentageLabel.text = tipString + "%"
+        calculateTip(self)
     }
     
     override func didReceiveMemoryWarning() {

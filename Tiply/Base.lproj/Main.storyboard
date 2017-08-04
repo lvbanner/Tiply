@@ -84,7 +84,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0u-fj-U15">
-                                        <rect key="frame" x="168" y="24" width="39.5" height="23.5"/>
+                                        <rect key="frame" x="168.5" y="24" width="39.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Nunito-ExtraBold" family="Nunito" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.41960784309999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,8 +102,8 @@
                                             <segue destination="pAG-tw-8gc" kind="push" id="i6t-pG-D2z"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xse-tJ-6Mh">
-                                        <rect key="frame" x="8" y="56" width="359" height="33"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xse-tJ-6Mh">
+                                        <rect key="frame" x="8" y="68" width="359" height="33"/>
                                         <color key="tintColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="0.41960784313725491" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -288,23 +288,90 @@
                                             <segue destination="Yny-0m-xhk" kind="unwind" unwindAction="exitSettingsWithSegue:" id="qrI-BU-Iph"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axh-Cc-Dwa">
+                                        <rect key="frame" x="156" y="24" width="64" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.41960784309999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="axh-Cc-Dwa" firstAttribute="centerX" secondItem="iaw-C7-Br4" secondAttribute="centerX" id="225-CZ-gB5"/>
+                                    <constraint firstItem="axh-Cc-Dwa" firstAttribute="centerY" secondItem="iaw-C7-Br4" secondAttribute="centerY" id="IFU-Pd-LRk"/>
                                     <constraint firstItem="vMK-kE-Pkm" firstAttribute="leading" secondItem="iaw-C7-Br4" secondAttribute="leading" id="Xjs-OV-7Tz"/>
                                     <constraint firstItem="vMK-kE-Pkm" firstAttribute="top" secondItem="iaw-C7-Br4" secondAttribute="top" constant="16" id="dNe-pQ-Eve"/>
                                     <constraint firstAttribute="height" constant="72" id="yux-Ke-c5y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-2R-CHE">
+                                <rect key="frame" x="0.0" y="72" width="375" height="216"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPF-ha-UIC">
+                                        <rect key="frame" x="246" y="86" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="l4I-0s-MTI"/>
+                                            <constraint firstAttribute="height" constant="44" id="qOB-7c-6Xk"/>
+                                        </constraints>
+                                        <state key="normal" image="rightPercentage"/>
+                                        <connections>
+                                            <action selector="increasePercentage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Upf-2E-C9I"/>
+                                            <action selector="increasePercentage:" destination="pAG-tw-8gc" eventType="touchUpInside" id="cIV-dE-yRi"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Default Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd5-Gx-8H6">
+                                        <rect key="frame" x="8" y="188" width="97" height="20"/>
+                                        <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iv2-hE-huq">
+                                        <rect key="frame" x="85" y="86" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="dBN-Ic-hQf"/>
+                                            <constraint firstAttribute="height" constant="44" id="pED-BS-c6n"/>
+                                        </constraints>
+                                        <state key="normal" image="leftPercentage"/>
+                                        <connections>
+                                            <action selector="decreasePercentage:" destination="pAG-tw-8gc" eventType="touchUpInside" id="STn-tz-TvV"/>
+                                            <action selector="decreasePercentage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kiE-G0-GTG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf2-fm-lwi">
+                                        <rect key="frame" x="148.5" y="83.5" width="79.5" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.83158272724936744" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="iv2-hE-huq" firstAttribute="centerY" secondItem="rpt-2R-CHE" secondAttribute="centerY" id="265-oM-b7y"/>
+                                    <constraint firstItem="bPF-ha-UIC" firstAttribute="centerY" secondItem="rpt-2R-CHE" secondAttribute="centerY" id="9Rj-lY-YaM"/>
+                                    <constraint firstItem="iv2-hE-huq" firstAttribute="leading" secondItem="rpt-2R-CHE" secondAttribute="leading" constant="85" id="BYs-ON-0sS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wd5-Gx-8H6" secondAttribute="bottom" constant="8" id="Ft2-ji-lcx"/>
+                                    <constraint firstAttribute="trailing" secondItem="bPF-ha-UIC" secondAttribute="trailing" constant="85" id="PFP-pd-SFs"/>
+                                    <constraint firstItem="Wd5-Gx-8H6" firstAttribute="leading" secondItem="rpt-2R-CHE" secondAttribute="leading" constant="8" id="WhH-X2-BXv"/>
+                                    <constraint firstItem="sf2-fm-lwi" firstAttribute="centerX" secondItem="rpt-2R-CHE" secondAttribute="centerX" id="bQq-cl-xQ7"/>
+                                    <constraint firstAttribute="height" constant="216" id="pBe-Jh-c26"/>
+                                    <constraint firstItem="sf2-fm-lwi" firstAttribute="centerY" secondItem="rpt-2R-CHE" secondAttribute="centerY" id="qDE-8k-Dgj"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iaw-C7-Br4" firstAttribute="top" secondItem="C4Q-0C-G06" secondAttribute="top" id="2Jz-2z-XlE"/>
+                            <constraint firstAttribute="trailing" secondItem="rpt-2R-CHE" secondAttribute="trailing" id="4zd-dK-om7"/>
+                            <constraint firstItem="rpt-2R-CHE" firstAttribute="leading" secondItem="C4Q-0C-G06" secondAttribute="leading" id="CzX-s6-BWG"/>
                             <constraint firstItem="iaw-C7-Br4" firstAttribute="leading" secondItem="C4Q-0C-G06" secondAttribute="leading" id="N0k-bo-uZW"/>
                             <constraint firstAttribute="trailing" secondItem="iaw-C7-Br4" secondAttribute="trailing" id="gY6-gb-vJK"/>
+                            <constraint firstItem="rpt-2R-CHE" firstAttribute="top" secondItem="iaw-C7-Br4" secondAttribute="bottom" id="pgj-vy-cKI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1oo-pV-Aa3"/>
+                    <connections>
+                        <outlet property="tipPercentageLabel" destination="sf2-fm-lwi" id="Zjx-Yc-HIU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6WO-EJ-RbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Yny-0m-xhk" userLabel="Exit" sceneMemberID="exit"/>
