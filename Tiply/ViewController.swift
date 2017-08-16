@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         totalLabel.text = String(format: "$%.2f", total)
         
         let defaults = UserDefaults.standard
-        defaults.set(billEdited, forKey: "Stored Bill Amount")
+        defaults.set(billField.text!, forKey: "Stored Bill Amount")
         defaults.set(NSDate.init(), forKey: "Stored Bill Time")
         defaults.synchronize()
     }
