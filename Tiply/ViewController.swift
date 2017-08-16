@@ -26,11 +26,13 @@ class ViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        billField.delegate = self
-        billField.becomeFirstResponder()
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        billField.delegate = self
+        billField.becomeFirstResponder()
+        
         let defaults = UserDefaults.standard
         tipPercentage = (defaults.object(forKey: "Default Tip") as! Double?) ?? 0.18
         if (defaults.object(forKey: "Stored Bill Amount") != nil) {
@@ -56,7 +58,9 @@ class ViewController: UIViewController, UITextFieldDelegate{
 
     @IBAction func calculateTip(_ sender: Any) {
         
-        let bill = Double(billField.text!) ?? 0
+        var billEdited = billField.text!
+        billEdited.remove(at: (billEdited.startIndex))
+        let bill = Double(billEdited) ?? 0
         let tip = (bill*tipPercentage)/Double(numSplit)
         let total = (bill + tip)/Double(numSplit)
         
@@ -65,7 +69,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         totalLabel.text = String(format: "$%.2f", total)
         
         let defaults = UserDefaults.standard
-        defaults.set(billField.text, forKey: "Stored Bill Amount")
+        defaults.set(billEdited, forKey: "Stored Bill Amount")
         defaults.set(NSDate.init(), forKey: "Stored Bill Time")
         defaults.synchronize()
     }
@@ -99,6 +103,19 @@ class ViewController: UIViewController, UITextFieldDelegate{
             splitLabel.text = String(numSplit)
             calculateTip(sender)
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "" {
+            let currentString = textField.text
+            if currentString?.characters.count == 1{
+                return false
+            }
+        }
+        if string.contains(".") && textField.text!.contains(".") {
+            return false
+        }
+        return true
     }
     
     
