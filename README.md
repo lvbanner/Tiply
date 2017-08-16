@@ -2,7 +2,7 @@
 
 Tiply is a tip calculator application for iOS.
 
-Submitted by: **Your Name Here**
+Submitted by: Luther Banner III
 
 Time spent: 7 hours spent in total
 
@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/L4WFM9D.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/7b0yg8Q.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
