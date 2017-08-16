@@ -278,12 +278,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMK-kE-Pkm">
-                                        <rect key="frame" x="0.0" y="16" width="40" height="40"/>
+                                        <rect key="frame" x="0.0" y="24" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="5oi-1w-lb7"/>
                                             <constraint firstAttribute="height" constant="40" id="Kgd-Ou-Otf"/>
                                         </constraints>
-                                        <state key="normal" image="leftSplit"/>
+                                        <state key="normal" image="back"/>
                                         <connections>
                                             <segue destination="Yny-0m-xhk" kind="unwind" unwindAction="exitSettingsWithSegue:" id="qrI-BU-Iph"/>
                                         </connections>
@@ -300,7 +300,7 @@
                                     <constraint firstItem="axh-Cc-Dwa" firstAttribute="centerX" secondItem="iaw-C7-Br4" secondAttribute="centerX" id="225-CZ-gB5"/>
                                     <constraint firstItem="axh-Cc-Dwa" firstAttribute="centerY" secondItem="iaw-C7-Br4" secondAttribute="centerY" id="IFU-Pd-LRk"/>
                                     <constraint firstItem="vMK-kE-Pkm" firstAttribute="leading" secondItem="iaw-C7-Br4" secondAttribute="leading" id="Xjs-OV-7Tz"/>
-                                    <constraint firstItem="vMK-kE-Pkm" firstAttribute="top" secondItem="iaw-C7-Br4" secondAttribute="top" constant="16" id="dNe-pQ-Eve"/>
+                                    <constraint firstItem="vMK-kE-Pkm" firstAttribute="top" secondItem="iaw-C7-Br4" secondAttribute="top" constant="24" id="dNe-pQ-Eve"/>
                                     <constraint firstAttribute="height" constant="72" id="yux-Ke-c5y"/>
                                 </constraints>
                             </view>
@@ -399,6 +399,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="40" height="40"/>
         <image name="leftPercentage" width="44" height="44"/>
         <image name="leftSplit" width="40" height="40"/>
         <image name="rightPercentage" width="44" height="44"/>
